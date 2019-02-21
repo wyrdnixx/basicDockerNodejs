@@ -1,0 +1,10 @@
+version: '3.1'
+services:
+  app:
+    image: node:alpine               
+    command: sh -c 'npm install  --save-dev; npm install express  --save-dev; npm install -g nodemon; nodemon server.js'
+    working_dir: /src/app/
+    volumes:
+      - .:/src/app/      
+    ports:
+      - "3000:3000"
